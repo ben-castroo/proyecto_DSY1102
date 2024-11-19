@@ -5,6 +5,7 @@
 package Vista;
 
 import Controlador.Registro;
+import Controlador.Validacion;
 import Modelo.Bodega;
 import Modelo.Producto;
 import java.util.List;
@@ -45,50 +46,31 @@ public class Jfm_Producto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jbtm_ingresar_otro_producto = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jbtm_salir_menu = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jcb_bodega = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jtxt_nombre_producto = new javax.swing.JTextField();
         jtxt_marca = new javax.swing.JTextField();
         jtxt_modelo = new javax.swing.JTextField();
         jtxt_id_producto = new javax.swing.JTextField();
         jtxt_stock = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jbtm_guardar_producto = new javax.swing.JButton();
-        jbtm_ingresar_otro_producto = new javax.swing.JButton();
-        jbtm_salir_menu = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jcb_bodega = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo Producto");
 
-        jLabel1.setText("Ingresar Producto");
+        jPanel1.setBackground(new java.awt.Color(228, 216, 237));
 
-        jLabel2.setText("Nombre");
-
-        jLabel3.setText("Marca");
-
-        jLabel4.setText("Modelo");
-
-        jLabel5.setText("ID Producto");
-
-        jLabel6.setText("Stock");
-
-        jtxt_id_producto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_id_productoActionPerformed(evt);
-            }
-        });
-
-        jbtm_guardar_producto.setText("Guardar Producto");
-        jbtm_guardar_producto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtm_guardar_productoActionPerformed(evt);
-            }
-        });
-
+        jbtm_ingresar_otro_producto.setBackground(new java.awt.Color(162, 163, 226));
+        jbtm_ingresar_otro_producto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jbtm_ingresar_otro_producto.setText("Ingresar otro Producto");
         jbtm_ingresar_otro_producto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +78,11 @@ public class Jfm_Producto extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText("Marca");
+
+        jbtm_salir_menu.setBackground(new java.awt.Color(158, 85, 144));
+        jbtm_salir_menu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jbtm_salir_menu.setText("Salir al Menú");
         jbtm_salir_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +90,14 @@ public class Jfm_Producto extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setText("Modelo");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Bodega asociada");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setText("ID Producto");
 
         jcb_bodega.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jcb_bodega.addActionListener(new java.awt.event.ActionListener() {
@@ -112,20 +106,46 @@ public class Jfm_Producto extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setText("Stock");
+
+        jtxt_id_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_id_productoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ingresar Producto");
+
+        jbtm_guardar_producto.setBackground(new java.awt.Color(162, 163, 226));
+        jbtm_guardar_producto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jbtm_guardar_producto.setText("Guardar Producto");
+        jbtm_guardar_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtm_guardar_productoActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("Nombre");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
@@ -133,59 +153,70 @@ public class Jfm_Producto extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel7))
                                 .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jtxt_nombre_producto)
                                     .addComponent(jtxt_marca)
                                     .addComponent(jtxt_modelo)
                                     .addComponent(jtxt_id_producto)
                                     .addComponent(jtxt_stock)
-                                    .addComponent(jcb_bodega, 0, 162, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jcb_bodega, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addComponent(jbtm_guardar_producto)
                                 .addGap(18, 18, 18)
-                                .addComponent(jbtm_ingresar_otro_producto))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jbtm_salir_menu)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                                .addComponent(jbtm_ingresar_otro_producto)))
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jbtm_salir_menu)
+                        .addGap(149, 149, 149))))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jtxt_nombre_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jtxt_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtxt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jtxt_id_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jtxt_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jcb_bodega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtm_guardar_producto)
                     .addComponent(jbtm_ingresar_otro_producto))
                 .addGap(18, 18, 18)
                 .addComponent(jbtm_salir_menu)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -195,23 +226,67 @@ public class Jfm_Producto extends javax.swing.JFrame {
         //        capturar datos
         String nombre,marca,modelo;
         int idProducto,stock;
+        boolean flag = true;
         Bodega bodega = new Bodega();
         
         nombre = this.jtxt_nombre_producto.getText();
         marca = this.jtxt_marca.getText();
         modelo = this.jtxt_modelo.getText();
-        idProducto = Integer.valueOf(this.jtxt_id_producto.getText());
-        stock = Integer.valueOf(this.jtxt_stock.getText());
+        //Validaciones previo a ejecución de query
+        if(!(Validacion.validarNotNullString(nombre) && Validacion.validarVarchar20(nombre))){
+           JOptionPane.showMessageDialog(this, "El nombre no puede tener más de 20 caracteres ni estar en blanco.");
+           flag = false;
+        }
+        else if(!(Validacion.validarNotNullString(marca) && Validacion.validarVarchar20(marca))){
+           JOptionPane.showMessageDialog(this, "La marca no puede tener más de 20 caracteres ni estar en blanco.");
+           flag = false;
+        }
+        else if(!(Validacion.validarNotNullString(modelo) && Validacion.validarVarchar20(modelo))){
+           JOptionPane.showMessageDialog(this, "El modelo no puede tener más de 20 caracteres ni estar en blanco.");
+           flag = false;
+        }
         
+        try{
+            idProducto = Integer.valueOf(this.jtxt_id_producto.getText());
+        }
+        catch(Exception ex){
+           JOptionPane.showMessageDialog(this, "Ingrese solo caracteres numéricos en el id del producto");
+           flag = false;
+           idProducto = 0;
+        }
+        if(!(Validacion.validarInt(idProducto))){
+           JOptionPane.showMessageDialog(this, "El idProducto no puede tener más de 9 dígitos, ni estar en blanco.");
+           flag = false;
+        }
+        
+        try{
+            stock = Integer.valueOf(this.jtxt_stock.getText());
+            if(!(Validacion.validarInt(stock))){
+                JOptionPane.showMessageDialog(this, "El stock no puede tener más de 9 dígitos, ni estar en blanco.");
+                flag = false;
+            }
+        }
+        catch(Exception ex){
+           JOptionPane.showMessageDialog(this, "Ingrese solo caracteres numéricos en el stock del producto");
+           flag = false;
+           stock = 0;
+        }
+
         //esta línea captura la bodega seleccionada
         bodega = (Bodega)this.jcb_bodega.getSelectedItem();        
 
-        Producto producto = new Producto(nombre, marca, modelo, idProducto, stock, bodega);
-        
+        //EJECUCIÓN DE QUERY
         Registro reg = new Registro();
-        reg.agregarProducto(producto);
-        JOptionPane.showMessageDialog(this, "Registro exitoso de "+nombre);
-
+        if(flag){
+            if(reg.validarRegistroProducto(idProducto)==false){
+                Producto producto = new Producto(nombre, marca, modelo, idProducto, stock, bodega);
+                reg.agregarProducto(producto);
+                JOptionPane.showMessageDialog(this, "Registro exitoso de " + nombre);
+            }
+            else {
+                JOptionPane.showMessageDialog(this, "Este id de producto ya se encuentra registrado, elige otro");
+            }
+        }
     }//GEN-LAST:event_jbtm_guardar_productoActionPerformed
 
     private void jbtm_ingresar_otro_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtm_ingresar_otro_productoActionPerformed
@@ -277,6 +352,7 @@ public class Jfm_Producto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtm_guardar_producto;
     private javax.swing.JButton jbtm_ingresar_otro_producto;
     private javax.swing.JButton jbtm_salir_menu;

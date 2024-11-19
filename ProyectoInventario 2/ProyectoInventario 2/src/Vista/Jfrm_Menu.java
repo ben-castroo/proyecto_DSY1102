@@ -23,18 +23,34 @@ public class Jfrm_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmi_ingresar = new javax.swing.JMenuItem();
-        jmi_modificar = new javax.swing.JMenuItem();
-        jmi_eliminar = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jmi_listar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jmenu_salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menú");
 
-        jMenu1.setText("File");
+        jPanel1.setBackground(new java.awt.Color(228, 216, 237));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 276, Short.MAX_VALUE)
+        );
+
+        jMenuBar1.setBackground(new java.awt.Color(162, 163, 226));
+
+        jMenu1.setText("Inventario");
 
         jmi_ingresar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmi_ingresar.setText("Ingresar Producto");
@@ -44,23 +60,10 @@ public class Jfrm_Menu extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jmi_ingresar);
-
-        jmi_modificar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jmi_modificar.setText("Modificar Producto");
-        jmi_modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_modificarActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jmi_modificar);
-
-        jmi_eliminar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jmi_eliminar.setText("Eliminar Producto");
-        jMenu1.add(jmi_eliminar);
         jMenu1.add(jSeparator1);
 
         jmi_listar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jmi_listar.setText("Listar Inventario");
+        jmi_listar.setText("Gestor Inventario");
         jmi_listar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_listarActionPerformed(evt);
@@ -70,7 +73,17 @@ public class Jfrm_Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Salir");
+
+        jmenu_salir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jmenu_salir.setText("Salir");
+        jmenu_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenu_salirActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmenu_salir);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -79,11 +92,11 @@ public class Jfrm_Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 276, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -94,14 +107,14 @@ public class Jfrm_Menu extends javax.swing.JFrame {
       producto.setVisible(true);
     }//GEN-LAST:event_jmi_ingresarActionPerformed
 
-    private void jmi_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_modificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_modificarActionPerformed
-
     private void jmi_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarActionPerformed
         Jfm_Buscar_Producto buscar_producto = new Jfm_Buscar_Producto();
         buscar_producto.setVisible(true);
     }//GEN-LAST:event_jmi_listarActionPerformed
+
+    private void jmenu_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenu_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jmenu_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,10 +155,10 @@ public class Jfrm_Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JMenuItem jmi_eliminar;
+    private javax.swing.JMenuItem jmenu_salir;
     private javax.swing.JMenuItem jmi_ingresar;
     private javax.swing.JMenuItem jmi_listar;
-    private javax.swing.JMenuItem jmi_modificar;
     // End of variables declaration//GEN-END:variables
 }

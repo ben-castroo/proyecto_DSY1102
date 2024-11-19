@@ -484,6 +484,42 @@ public class Registro {
         
     }
     
-     
+    public boolean validarRegistroProducto(int idProducto)
+    {
+        try {
+            
+            ConexionBD conexion = new ConexionBD();
+            Connection cnx = conexion.obtenerConexion();    
+            
+            //query SQL
+            String query = "SELECT * FROM producto WHERE idProducto = ?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setInt(1, idProducto);
+           
+            stmt.executeQuery();
+            
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                if(idProducto == rs.getInt("idProducto")){
+                    System.out.println("Ya existe un PRODUCTO con este ID, ");
+                    return true;
+                }
+            }
+            stmt.close();
+            cnx.close();
+            
+            return false;
+               
+        } catch (SQLException ex) {
+            //Logger
+            System.out.println("Error en SQL al validar registro de producto " + ex.getMessage());
+            return false;
+        }
+        catch(Exception e){
+            System.out.println("Error en el método validar registro de producto " + e.getMessage());
+            return false;
+        }
+        
+    } 
     
 }
